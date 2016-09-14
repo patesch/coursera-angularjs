@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" ng-app="LunchCheck">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+      .app-warning { margin: 10px 0;}
+    </style>
+    <script src="angular.min.js" charset="utf-8"></script>
+  </head>
+<body>
+   <div class="container" ng-controller="LunchCheckController">
+     <h1>Lunch Checker</h1>
+
+         <div class="form-group">
+             <input id="lunch-menu" type="text"
+             ng-model="foods"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control">
+             <p class="app-warning">
+                <span class="label label-warning">Warning</span>: Inform <b>three</b> items. Empty item (<code>,,</code>) is NOT being considered as an item towards to the count
+             </p>
+         </div>
+         <div class="form-group">
+             <button ng-click="checkQuantityofFood();" class="btn btn-default">Check If Too Much</button>
+         </div>
+         <div class="form-group message">
+           <!-- Your message can go here. -->
+           <p class="app-warning">
+             <span class="label" ng-class="messageClass">{{message}}</span>
+           </p>
+         </div>
+   </div>
+
+   <script type="text/javascript">
+     (function(ng) {
+       'use strict';
+       ng.module('LunchCheck',[])
+       .controller('LunchCheckController',LunchCheckController);
+
+       LunchCheckController.$inject = ['$scope'];
+
+       function LunchCheckController($scope){
+
+          $scope.foods = '';
+          $scope.message = '';
+
+          $scope.checkQuantityofFood = function () {
+            var listOfFood = $scope.foods.split(',').filter(function(item){return item!=''});
+            console.log(listOfFood);
+            if (listOfFood.length == 0 ) {
+              $scope.message = "Please enter data first";
+              $scope.messageClass = "label-info";
+            } else if (listOfFood.length>3) {
+              $scope.message = "Too much!";
+              $scope.messageClass = "label-danger";
+            } else {
+              $scope.message = "Enjoy!";
+              $scope.messageClass = "label-success";
+            }
+          };
+       }
+     }(angular));
+   </script>
+
+</body>
+</html>
