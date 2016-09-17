@@ -1,0 +1,131 @@
+html::after {
+  content: "";
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  background: url('../img/lunch.jpg') no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+body {
+  margin: 20px auto;
+  padding: 15px;
+  font-family: 'Poiret One', cursive, sans-serif;
+  position: relative;
+}
+
+/** main styles **/
+.heading {
+  font-weight: 900;
+}
+.desc {
+  font-size:20px;
+  margin-top:20px;
+  font-weight: 600;
+}
+.container {
+  position: relative;
+  top:100px;
+}
+
+/** Form styles **/
+form {
+  margin-top: 40px;
+}
+.menu-input {
+  padding: 20px;
+  height: 60px;
+  font-size: 20px;
+  letter-spacing: 0.05em;
+}
+
+.submit-btn {
+  height: 60px;
+  font-size: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+  outline: 0;
+}
+
+.submit-btn:active, .submit-btn:focus {
+  outline: 0;
+}
+
+.info-text {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/** Form feedback **/
+.has-error .form-control{
+  border: 2px solid #cf000f;
+}
+
+.has-success .form-control {
+  border: 2px solid #39B54A;
+}
+
+.success {
+  color: #39B54A;
+}
+
+.error {
+  color: #cf000f;
+}
+
+/**  Placeholder styles **/
+*::-webkit-input-placeholder {
+  font-size: 20px;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: pink;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: pink;
+}
+*:-ms-input-placeholder {
+  font-size: 20px;
+}
+*::placeholder {
+  font-size: 20px;
+}
+
+/** Message styles **/
+
+.message {
+  margin-top: 25px;
+  letter-spacing: 0.1em;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/** Source code button **/
+
+.code {
+  position: fixed;
+  bottom: 5%;
+  right: 2%;
+}
+
+.code a {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  color: #fff;
+  outline: none;
+  background: #db4437;
+  border: 0;
+}
+.code a:active, .code a:focus, .code a:hover {
+  color: #fff;
+}
