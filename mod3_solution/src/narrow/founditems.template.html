@@ -1,0 +1,22 @@
+<div class="found-items-list">
+    <table class='table table-responsive table-bordered'>
+        <thead ng-if="$ctrl.foundItems.length>0">
+            <tr>
+                <th>seq</th>
+                <th ng-click="$ctrl.order='name'">name <span ng-class="{'glyphicon glyphicon-triangle-bottom':$ctrl.order=='name'}"></span></th>
+                <th ng-click="$ctrl.order='short_name'">short name <span ng-class="{'glyphicon glyphicon-triangle-bottom':$ctrl.order=='short_name'}"></span></th>
+                <th ng-click="$ctrl.order='description'">description <span ng-class="{'glyphicon glyphicon-triangle-bottom':$ctrl.order=='description'}"></span></th>
+                <th ng-click="$ctrl.order='option'">option</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in $ctrl.foundItems | orderBy:$ctrl.order">
+                <td>{{ $index+1 }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.short_name }}</td>
+                <td>{{ item.description }}</td>
+                <td><button ng-click="$ctrl.removeItem($index)" type="button" name="js-btn-removeitem">Don't want this one!</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
