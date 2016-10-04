@@ -6,7 +6,8 @@
     templateUrl: 'src/MenuApp/components/items.component.template.html',
     bindings: {
       items: '<',
-      classes: '@'
+      classes: '@',
+      categoryName: '@'
     }
   });
 
