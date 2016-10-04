@@ -1,3 +1,4 @@
+<h3>List of <span class="category-name">{{$ctrl.categoryName}}</span>'s items (total: {{$ctrl.items.length}})</h3>
 <div ng-class="$ctrl.classes" ng-if="$ctrl.items.length">
     <ul ng-repeat="item in $ctrl.items">
         <li>Item id: <span>{{ item.id }}</span></li>
