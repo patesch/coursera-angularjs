@@ -10,8 +10,6 @@
     // Redirect to home page if no other URL matches
     $urlRouterProvider.otherwise('/');
 
-    console.log('Entering config');
-
     // *** Set up UI states ***
     $stateProvider
 
@@ -28,7 +26,6 @@
       controller: 'CategoriesController as categoriesList',
       resolve: {
         categories: ['MenuDataService', function (MenuDataService) {
-          console.log('Entering');
           return MenuDataService.getAllCategories();
         }]
       }

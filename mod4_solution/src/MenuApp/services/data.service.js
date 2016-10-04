@@ -8,8 +8,6 @@
   function MenuDataService($http,ApiBasePath) {
     var service = this;
 
-    console.log('Entering MenuDataService');
-
     service.getAllCategories = function() {
       return $http({
         method: "GET",
