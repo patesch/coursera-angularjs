@@ -39,6 +39,11 @@
       params: {
         short_name: null,
         category_name: null
+      },
+      resolve: {
+        items: ['$stateParams','MenuDataService', function ($stateParams,MenuDataService) {
+          return MenuDataService.getItemsForCategory($stateParams.short_name);
+        }]
       }
     });
 
