@@ -1,0 +1,9 @@
+<div ng-class="$ctrl.classes" ng-if="$ctrl.items.length">
+    <ul ng-repeat="item in $ctrl.items">
+        <li>Item id: <span>{{ item.id }}</span></li>
+        <li>Item short name: <span>{{ item.short_name }}</span></li>
+        <li>Item name: <span>{{ item.name }}</span></li>
+        <li>Item description: <span>{{ item.description }}</span></li>
+        <li>Item price (large): <span>{{ item.price_large|currency }}</span></li>
+    </ul>
+</div>
