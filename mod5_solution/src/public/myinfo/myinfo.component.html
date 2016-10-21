@@ -1,0 +1,17 @@
+<div class="col-sm-6 col-sm-offset-3">
+    <div class="box-info">
+        <p>Firstname: <span class="label label-default lb-size-em">{{$ctrl.info.firstname}}</span></p>
+        <p>Lastname: <span class="label label-default lb-size-em">{{$ctrl.info.lastname}}</span></p>
+        <p>E-mail: <span class="label label-default lb-size-em">{{$ctrl.info.email}}</span></p>
+        <p>Phone: <span class="label label-default lb-size-em">{{$ctrl.info.phone}}</span></p>
+        <div>
+            Favorite dish:
+            <br>
+            <img ng-src="{{$ctrl.info.basePath}}/images/{{$ctrl.info.menuItem.short_name}}.jpg" alt="{{$ctrl.info.menuItem.name}}">
+            <div>
+                <p>Title: {{$ctrl.info.menuItem.name}}</p>
+                <p>Description: {{$ctrl.info.menuItem.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

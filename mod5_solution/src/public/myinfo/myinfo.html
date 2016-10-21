@@ -1,0 +1,8 @@
+<div class="container" ng-if="myinfoCtrl.isLoggedIn">
+    <h1 class="text-center">Registered information</h1>
+    <my-info info="myinfoCtrl.myInfo"></my-info>
+</div>
+
+<div class="container" ng-if="!myinfoCtrl.isLoggedIn">
+    <h2 class="text-center margin-top-100 margin-bottom-100">Not Signed Up Yet. <a ui-sref="public.signup" title="Sign Up">Sign up Now!</a></h2>
+</div>

@@ -1,0 +1,72 @@
+<div class="container">
+
+    <h1 class="text-center">Sign-Up Our Newsletter</h1>
+
+    <div class="col-sm-6 col-sm-offset-3">
+
+        <form class="form-horizontal login-container" name="frmSignUp" novalidade>
+            <fieldset class="box-info">
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Firstname
+                    </label>
+                    <div class="col-sm-9">
+                        <input class="form-control" type="text" name="firstname" ng-model="signupCtrl.form.firstname" required>
+                        <span ng-if="frmSignUp.firstname.$error.required && frmSignUp.firstname.$touched">
+                            Firtname is required
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Firstname
+                    </label>
+                    <div class="col-sm-9">
+                        <input class="form-control" type="text" name="lastname" ng-model="signupCtrl.form.lastname" required>
+                        <span ng-if="frmSignUp.lastname.$error.required && frmSignUp.lastname.$touched">
+                            Lastname is required
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3">E-mail
+                    </label>
+                    <div class="col-sm-9">
+                        <input class="form-control" type="email" name="email" ng-model="signupCtrl.form.email" required>
+                        <span ng-if="frmSignUp.email.$invalid && frmSignUp.email.$touched">
+                            Must be a valid email address: handle@domain format
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Phone
+                    </label>
+                    <div class="col-sm-9">
+                        <input class="form-control" type="text" name="phone" placeholder="Phone ###-###-####" ng-model="signupCtrl.form.phone" pattern="(\d{3})-(\d{3})-(\d{4})" required>
+                        <span ng-if="frmSignUp.phone.$invalid && frmSignUp.phone.$touched">
+                            Phone must be in the format ###-###-####.
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Favorite dish
+                    </label>
+                    <div class="col-sm-9">
+                        <input ng-blur="signupCtrl.checkExist()" class="form-control" type="text" name="dish" ng-model="signupCtrl.form.dish" placeholder="Enter your favorite dish(short_name)">
+                        <p ng-if="!signupCtrl.exists" class="text-left">
+                            {{signupCtrl.message}}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-default" ng-disabled="frmSignUp.$invalid || !signupCtrl.exists" ng-click="signupCtrl.submit()">Submit</button>
+                </div>
+
+                <p ng-if="signupCtrl.exists" class="text-center">
+                    {{signupCtrl.message}}
+                </p>
+
+            </fieldset>
+        </form>
+    </div>
+
+</div>
